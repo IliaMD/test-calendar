@@ -33,13 +33,13 @@ export const Header = (toolbar) => {
   const goToBack = () => {
     toolbar.date.setDate(1);
     toolbar.date.setMonth(toolbar.date.getMonth() - 1);
-    toolbar.onNavigate("prev");
+    toolbar.onNavigate("PREV");
   };
 
   const goToNext = () => {
     toolbar.date.setDate(1);
     toolbar.date.setMonth(toolbar.date.getMonth() + 1);
-    toolbar.onNavigate("next");
+    toolbar.onNavigate("NEXT");
   };
 
   const goToCurrent = () => {
