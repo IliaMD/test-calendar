@@ -30,25 +30,6 @@ export const Header = (toolbar) => {
 
   const date = moment(toolbar.date);
 
-  const goToBack = () => {
-    toolbar.date.setDate(1);
-    toolbar.date.setMonth(toolbar.date.getMonth() - 1);
-    toolbar.onNavigate("PREV");
-  };
-
-  const goToNext = () => {
-    toolbar.date.setDate(1);
-    toolbar.date.setMonth(toolbar.date.getMonth() + 1);
-    toolbar.onNavigate("NEXT");
-  };
-
-  const goToCurrent = () => {
-    const now = new Date();
-    toolbar.date.setMonth(now.getMonth());
-    toolbar.date.setYear(now.getFullYear());
-    toolbar.onNavigate("TODAY");
-  };
-
   const hadleSelectOpen = () => {
     setSelectOpen(!selectOpen);
   };
@@ -66,10 +47,10 @@ export const Header = (toolbar) => {
           <span> {date.format("YYYY")}</span>
         </MonthTitle>
 
-        <LeftImg src={left} onClick={goToBack} />
-        <RightImg src={right} onClick={goToNext} />
+        <LeftImg src={left} onClick={() => toolbar.onNavigate("PREV")} />
+        <RightImg src={right} onClick={() => toolbar.onNavigate("NEXT")} />
 
-        <TodayBtn onClick={goToCurrent}>Today</TodayBtn>
+        <TodayBtn onClick={() => toolbar.onNavigate("TODAY")}>Today</TodayBtn>
 
         {selectOpen ? (
           <TimezoneSelectStyled
