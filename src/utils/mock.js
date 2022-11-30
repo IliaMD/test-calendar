@@ -1,5 +1,5 @@
-const oldDate = new Date("November 16, 2022 03:24:00");
-const futureDate = new Date("December 2, 2022 22:22:22");
+const oldDate = new Date("November 28, 2022 03:24:00");
+const futureDate = new Date("December 10, 2022 22:22:22");
 
 export const eventsList = [
   {

@@ -46,7 +46,7 @@ export const Header = (toolbar) => {
     const now = new Date();
     toolbar.date.setMonth(now.getMonth());
     toolbar.date.setYear(now.getFullYear());
-    toolbar.onNavigate("current");
+    toolbar.onNavigate("TODAY");
   };
 
   const hadleSelectOpen = () => {
