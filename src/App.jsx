@@ -1,34 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React from "react";
+import styled from "styled-components";
+import { Drawer, MyCalendar } from "./components";
+import { RecoilRoot } from "recoil";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+    <RecoilRoot>
+      <Wrapper>
+        <Drawer />
+        <Container>
+          <MyCalendar />
+        </Container>
+      </Wrapper>
+    </RecoilRoot>
+  );
+};
 
-export default App
+export default App;
+
+const Wrapper = styled.div`
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+`;
+
+const Container = styled.div`
+  background-color: #2d224c;
+  width: 100vw;
+`;
