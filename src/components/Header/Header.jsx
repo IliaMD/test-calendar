@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import left from "../../assets/img/left.png";
-import right from "../../assets/img/right.png";
+import prev from "../../assets/img/prev.png";
+import next from "../../assets/img/next.png";
 import moment from "moment";
 import TimezoneSelect from "react-timezone-select";
 import { atom, useRecoilState } from "recoil";
@@ -47,8 +47,8 @@ export const Header = (toolbar) => {
           <span> {date.format("YYYY")}</span>
         </MonthTitle>
 
-        <LeftImg src={left} onClick={() => toolbar.onNavigate("PREV")} />
-        <RightImg src={right} onClick={() => toolbar.onNavigate("NEXT")} />
+        <LeftImg src={prev} onClick={() => toolbar.onNavigate("PREV")} />
+        <RightImg src={next} onClick={() => toolbar.onNavigate("NEXT")} />
 
         <TodayBtn onClick={() => toolbar.onNavigate("TODAY")}>Today</TodayBtn>
 
