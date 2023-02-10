@@ -22,7 +22,6 @@ const customStyles = {
 const themes = {
   true: () => `
     color: #8065C9;
-
   `,
 
   false: () => `

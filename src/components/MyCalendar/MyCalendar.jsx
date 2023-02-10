@@ -22,10 +22,6 @@ export const MyCalendar = () => {
     setNeedableModal(e);
   }
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-
   return (
     <Root id="root">
       <Calendar
@@ -39,7 +35,7 @@ export const MyCalendar = () => {
         drilldownView={null}
       />
       <StyledModal
-        onCloseModal={() => closeModal()}
+        onCloseModal={() => setIsOpen(false)}
         onIsOpen={modalIsOpen}
         onModal={needableModal}
       />
